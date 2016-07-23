@@ -1,0 +1,3 @@
+Setting up EF 
+- To use a particular database, you need to include a reference to efc.<SqlServer.etc>
+- To use the cli tools - you need to reference the efc.design dll, but it needs to be in references rather than tools like the efc.tools dll. 

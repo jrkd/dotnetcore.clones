@@ -8,7 +8,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
-namespace ovalspace
+using oval.models;
+using Microsoft.EntityFrameworkCore;
+
+namespace oval
 {
     public class Startup
     {
@@ -29,6 +32,8 @@ namespace ovalspace
         {
             // Add framework services.
             services.AddMvc();
+            var connectionString = "Data Source=.\\SQLEXPRESS2014;Initial Catalog=OvalSpace;Integrated Security=False;user=sa;password=password;Pooling=false;Connect Timeout=30";
+            services.AddDbContext<OvalContext>(options => options.UseSqlServer(connectionString));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
