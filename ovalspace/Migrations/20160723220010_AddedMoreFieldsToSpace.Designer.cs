@@ -8,9 +8,10 @@ using oval.models;
 namespace ovalspace.Migrations
 {
     [DbContext(typeof(OvalContext))]
-    partial class OvalContextModelSnapshot : ModelSnapshot
+    [Migration("20160723220010_AddedMoreFieldsToSpace")]
+    partial class AddedMoreFieldsToSpace
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.0-rtm-21431")

@@ -1,3 +1,23 @@
 @model IEnumerable<oval.models.Space> 
 
-<h1>Space List View</h1>   
+
+
+<div class="content__container">
+    <div class="grid grid--spaces">
+        @foreach(var space in Model){
+
+            <div class="grid__child grid__child--spaces has-overlay--spaces small-12 medium-6">
+                <a href="/Space/Detail/@(space.ID)" style="display: block;">
+                    <img title="@(space.Name)" src="@(space.ImageURL)" style="width:100%; height:auto;">
+
+                    <h3>@space.Name</h3>
+                    <div class="grid__child__overlay">
+                        <h3>@space.Name</h3>
+                        <h4>@space.Description</h4>
+                    </div>
+                </a>
+            </div>
+        }
+
+    </div>
+</div>

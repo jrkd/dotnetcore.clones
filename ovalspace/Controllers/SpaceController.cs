@@ -15,7 +15,7 @@ namespace oval.controllers{
             return View("SpaceList");
         }
         public IActionResult List(){
-            return View("SpaceList");
+            return View("SpaceList", _context.Spaces);
         }
 
         public IActionResult Detail(int id){

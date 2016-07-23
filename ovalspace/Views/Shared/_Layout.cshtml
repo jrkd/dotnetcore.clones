@@ -1,30 +1,217 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en" xmlns:og="http://ogp.me/ns#">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - ovalspace</title>
+  <meta charset="utf-8" />
+  <meta name="author" lang="en" content="Oval Space" />
+  <meta name="description" content="Oval Space is a mixed use arts and event space in the heart of Bethnal Green, East London." />
 
-    <environment names="Development">
-        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-        <link rel="stylesheet" href="~/css/site.css" />
-    </environment>
-    <environment names="Staging,Production">
-        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/css/bootstrap.min.css"
-              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
-              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
-        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
-    </environment>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0" />
+
+  <title>An evolving multi-use arts and events organization Oval Space</title>
+
+  
+  
+  <link rel="shortcut icon" type="image/x-icon" href="/static//favicon.ico?v=1.0.20-0.29-" />
+
+  <!--<link rel="stylesheet" href="/static/min/css/style.css?v=1.0.20-0.29-" />-->
+
+  <link rel="stylesheet" href="http://www.ovalspace.co.uk/static/js/vendor/jquery-fancybox.2.1.5/jquery-fancybox.css?v=1.0.20-0.29-">
+  <link rel="stylesheet" href="http://www.ovalspace.co.uk/media/stylesheets/app.css" />
+  <script src="http://www.ovalspace.co.uk/media/javascripts/modernizr.js"></script>
+  <script src="http://www.ovalspace.co.uk/media/javascripts/svg4everybody.js"></script>
+
+
+
+
+  <link rel="stylesheet" href="http://www.ovalspace.co.uk/static/vendor/toastr/toastr.css?v=1.0.20-0.29-" />
+  <!--<link rel="stylesheet" href="/static/js/vendor/jquery-fancybox.2.1.5/jquery-fancybox.css?v=1.0.20-0.29-" />
+-->
+
+  <!-- Google Analytics -->
+  <script type="text/javascript">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-57557078-1', 'auto');  // Replace with your property ID.
+    ga('send', 'pageview');
+    ga('require', 'ecommerce', 'ecommerce.js');
+
+  </script>
+
 </head>
-<body>
-    <h1>Oval Space</h1>
-    <ul>
-        <li><a href="/Space/List">Spaces</a></li>
-        <li><a href="/Event/List">Events</a></li>
+<!--[if IE 9]><body class="lte-ie9 "><![endif]-->
+<!--[if gt IE 9]><!--><body class=""><!--<![endif]-->
+  <input type="hidden" id="csrfhash" name="ci_csrf_token" value="11abbf8a49c1e02526198185a29376c7" />  <a name="top" id="top"></a>
 
-        @RenderBody()
-    </ul>
+  <div class="body__container">
+    <header class="header">
+      <div class="small-12 desktop">
+        <ul class="nav--inline nav__account align--right">
+          <li><a href="/shopping/basket/">Cart (<span class="inject-basket-qty">0</span>)</a></li> |
+          <li><a href="/shopping/account/">Checkout</a></li> |
+                  <li><a href="/login">Log-in</a></li>
+                </ul>
+      </div>
+      <div class="small-10 columns">
+        <h1 class="header__title"><a href="/">Oval Space</a></h1>
+        <div class="mobile__search">
+          <form action="/search" accept-charset="utf-8" method="get">  <input type="hidden" id="csrfhash" name="ci_csrf_token" value="11abbf8a49c1e02526198185a29376c7" />  <input type="text" name="q" value="" placeholder="Search" />
+  <button type="submit" class="button button--search button--dark">
+    <i class="icon icon-ui-ss-gizmo-search">
+      <svg><use xlink:href="/media/images/sprites/ui.svg#ss-gizmo-search" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg>
+    </i>
+  </button>
+</form>        </div>
+      </div>
+      <div class="small-2 columns mobile">
+        <div class="nav__mobile--btns">
+          <div class="block">
+            <a href="search-results.php" class="mobile__search--toggle">
+              <i class="icon icon-ui-ss-gizmo-search">
+                <svg><use xlink:href="/media/images/sprites/ui.svg#ss-gizmo-search" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg>
+              </i>
+            </a>
+          </div><!--
+          --><div class="block">
+            <a href class="nav__mobile--toggle">
+              <i class="icon icon-ui-ss-standard-rows">
+                <svg><use xlink:href="/media/images/sprites/ui.svg#ss-standard-rows" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg>
+              </i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="small-2 columns desktop">
+        <div class="search">
+          <form action="/search" accept-charset="utf-8" method="get">  <input type="hidden" id="csrfhash" name="ci_csrf_token" value="11abbf8a49c1e02526198185a29376c7" />  <input type="text" name="q" value="" placeholder="Search" />
+  <button type="submit" class="button button--search button--dark">
+    <i class="icon icon-ui-ss-gizmo-search">
+      <svg><use xlink:href="/media/images/sprites/ui.svg#ss-gizmo-search" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg>
+    </i>
+  </button>
+</form>        </div>
+        <div class="subscribe">
+          <form action="/subscription" accept-charset="utf-8" method="post">  <input type="hidden" id="csrfhash" name="ci_csrf_token" value="11abbf8a49c1e02526198185a29376c7" />
+    <div class="js-notification notification notification--success">
+        <div class="notification__message">
+            Success
+        </div>
+        <div class="js-notification-close notification__close">
+            &times;
+        </div>
+    </div>
 
-    @RenderSection("scripts", required: false)
+  <fieldset>
+    <div>
+      <input type="email" name="email" maxlength="150" value="" placeholder="Subscribe" />
+    </div>
+  </fieldset>
+</form>
+        </div>
+      </div>
+      <nav class="nav__container small-12 columns hover--grey">
+        <div class="small-12 medium-6 block">
+          <ul class="nav--inline">
+            <li><a href="/about/the-venues/">Spaces</a></li>
+            <li><a href="/events">Events</a></li>
+            <li><a href="/shop">Shop</a></li>
+          </ul>
+        </div><!--
+        --><div class="desktop small-12 medium-4 block nav__pagenav">
+          
+
+        </div><!--
+        --><div class="desktop medium-2 block">
+            <a href="/blog">Monitor</a>
+          </div>
+        </nav>
+        <nav class="small-12 columns mobile nav__mobile">
+  <ul>
+      <li><a href="/about/the-venues/terrace/">Terrace</a></li>
+      <li><a href="/about/the-venues/oval-space/">Oval Space</a></li>
+      <li><a href="/about/the-venues/pickle-factory/">The Pickle Factory</a></li>
+      <li><a href="/about/the-venues/11---12-the-oval/">Oval Office</a></li>
+      <li><a href="/about/the-venues/oval-cafe/">Oval Cafe</a></li>
+  </ul>
+  <ul>
+    <li><a href="/blog">Monitor</a></li>
+  </ul>
+  <ul class="nav--inline">
+    <li><a href="/shopping/basket/">Cart (0)</a></li>
+          <li><a href="/login">Log-in</a></li>
+        
+  </ul>
+  <ul>
+    <li><a href="/faqs">FAQ</a></li>
+    <li><a href="/about/jobs">Jobs</a></li>
+  </ul>
+</nav>      </header>
+      
+
+    <!-- Content -->
+    <main class="main ">
+      @RenderBody()
+    </main>
+    <div class="footer--push"></div>
+  </div><!-- .body__container -->
+  <!-- Footer -->
+  <footer class="footer small-text footer--maxwidth">
+    <div class="large-6 medium-4 small-6 columns footer__contact hover__underline">
+      <span>Oval Space</span>
+      <span>29-32 The Oval&#8212;London E2 9DT</span>
+      <span><a href="mailto:info@ovalspace.co.uk">info@ovalspace.co.uk</a></span>
+    </div>
+    <div class="large-3 medium-4 small-6 columns social-footer">
+      <ul class="nav__socialmedia align--center nav--inline">
+        <li>Follow Us</li>
+        <li>
+          <a target="_blank" href="http://www.facebook.com/ovalspace">
+            <i class="icon icon-ui-ss-social-circle-facebook ss-social">
+            <svg><use xlink:href="/media/images/sprites/ui.svg#ss-social-circle-facebook" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg></i>
+          </a>
+        </li>
+        <li>
+          <a target="_blank" href="http://www.twitter.com/ovalspace">
+            <i class="icon icon-ui-ss-social-circle-twitter ss-social">
+            <svg><use xlink:href="/media/images/sprites/ui.svg#ss-social-circle-twitter" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg></i>
+          </a>
+        </li>
+        <li>
+          <a target="_blank" href="http://www.instagram.com/ovalspaceldn">
+            <i class="icon icon-ui-ss-social-circle-instagram ss-social">
+            <svg><use xlink:href="/media/images/sprites/ui.svg#ss-social-circle-instagram" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg></i>
+          </a>
+        </li>
+        <li>
+          <a target="_blank" href="http://www.soundcloud.com/ovalspace">
+            <i class="icon icon-ui-ss-social-circle-soundcloud ss-social">
+            <svg><use xlink:href="/media/images/sprites/ui.svg#ss-social-circle-soundcloud" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="large-3 medium-4 small-12 columns static-links">
+      <ul class="nav--inline align--right nav__footer hover__underline">
+        <li><a href="/legal">Legal</a></li>
+        <li><a href="/faqs">FAQ</a></li>
+        <li><a href="/about/jobs">Jobs</a></li>
+        <li><a href="/about/contact">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="/media/javascripts/jquery.js"><\/script>')</script>
+  <script src="http://www.ovalspace.co.uk/media/javascripts/jquery.slides.min.js"></script>
+  <script src="http://www.ovalspace.co.uk/media/javascripts/imagesloaded.pkgd.min.js"></script>
+  <script src="http://www.ovalspace.co.uk/media/javascripts/isotope.pkgd.min.js"></script>
+  <script src="http://www.ovalspace.co.uk/static/js/vendor/infinite-scroller.js"></script>
+  <script src="http://www.ovalspace.co.uk/media/javascripts/app.js"></script>
+  
 </body>
 </html>
